@@ -1,0 +1,29 @@
+{
+  "private": true,
+  "license": "MIT",
+  "author": "Nagy Viktor",
+  "name": "express-server",
+  "description": "Basic setup of an Express server with TypeScript",
+  "version": "0.1.0",
+  "main": "index.ts",
+  "devDependencies": {
+    "@types/express": "^4.17.11",
+    "@types/node": "^14.14.27",
+    "@types/winston": "^2.4.4",
+    "cross-env": "^7.0.3",
+    "nodemon": "^2.0.7",
+    "ts-node": "^9.1.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "typescript": "^4.1.5",
+    "winston": "^3.3.3"
+  },
+  "scripts": {
+    "test": "cross-env NODE_ENV=test && jest",
+    "build": "rm -rf build && tsc --project .",
+    "start": "cross-env NODE_ENV=development nodemon --exec ts-node index.ts"
+  }
+}
