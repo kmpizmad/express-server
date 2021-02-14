@@ -4,7 +4,7 @@ Basic setup for an Express application.
 
 Type `yarn install` and `yarn start` in the CLI to start the server
 
-See changes [here]()
+See changes [here](https://github.com/kmpizmad/express-server/blob/main/CHANGELOG.md)
 
 ### Dependencies (vendors)
 
