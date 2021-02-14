@@ -8,13 +8,13 @@ See changes [here](https://github.com/kmpizmad/express-server/blob/main/CHANGELO
 
 ### Dependencies (vendors)
 
-`express`: Server framework.
+`express:` Server framework.
 
-`body-parser`: Needed to interact with data in the request object
+`body-parser:` Needed to interact with data in the request object
 
-`dotenv`: For importing environment variables which is used 99.99% of the time
+`dotenv:` For importing environment variables which is used 99.99% of the time
 
-`winston`: Logging HTTP requests
+`winston:` Logging HTTP requests
 
 ### Folder structure
 
