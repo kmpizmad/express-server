@@ -1,5 +1,5 @@
 import { NotFoundHandler, ErrorHandler, Message } from '../../types';
-import { setLogging } from './logger';
+import { requestLogger, setLogging } from './logger';
 
 export const notFoundHandler: NotFoundHandler = async (req, res, next) => {
   const err: Message<'Error'> = {
@@ -21,3 +21,8 @@ export const errorHandler: ErrorHandler = async (err, req, res, next) => {
   );
   next();
 };
+
+export default [
+  { uri: '', handlers: [notFoundHandler, requestLogger], errorHandler: true },
+  { uri: '', handlers: [errorHandler, requestLogger], errorHandler: true },
+];

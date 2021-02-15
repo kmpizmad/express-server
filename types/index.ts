@@ -13,7 +13,7 @@ export type ServerConfiguration = {
 
 export type Route = {
   uri: string;
-  handler: Router | NotFoundHandler | ErrorHandler;
+  handlers: (Router | NotFoundHandler | ErrorHandler)[];
   errorHandler: boolean;
 };
 

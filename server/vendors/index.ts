@@ -1,5 +1,5 @@
-// Middlewares
-import bodyParser from 'body-parser';
+// Vendor middlewares
+import express from 'express';
 
 export { default as logger } from './logger';
-export default [bodyParser.json(), bodyParser.urlencoded({ extended: false })];
+export default [express.urlencoded({ extended: true }), express.json()];
