@@ -26,6 +26,7 @@ project root
 └ server
     └ middlewares
     └ routes
+    └ utils
     └ vendors
 └ types
 ```
