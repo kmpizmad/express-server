@@ -1,7 +1,7 @@
 {
   "private": true,
   "license": "MIT",
-  "author": "Nagy Viktor",
+  "author": "Viktor Nagy",
   "name": "express-server",
   "description": "Basic setup of an Express server with TypeScript",
   "version": "v0.1.0-alpha.v1",
