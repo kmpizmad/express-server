@@ -14,6 +14,10 @@ See changes [here](https://github.com/kmpizmad/express-server/blob/main/CHANGELO
 
 `winston:` Logging HTTP requests
 
+`nodemailer:` Sends email to developer(s) when an error occurs in today's `error-logs.log`
+
+`redis:` For caching the number of last known errors
+
 ### Folder structure
 
 ```
