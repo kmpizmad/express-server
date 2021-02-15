@@ -1,17 +1,12 @@
-# Changelog v0.1.0-alpha.v1
-
-### Removed
-
-- `body-parser` as a dependency. Server now uses the built-in `express.json()` and `express.urlencoded({ extended: true })` middlewares for parsing incoming data
+# Changelog v1.0.0
 
 ### Added
 
-- Jest config for testing purpose
-- Test suite for `testEndpoint.ts`. Needed to optimize the server for proper testing.
+- [Nodemailer](https://www.npmjs.com/package/nodemailer) and [Redis](https://www.npmjs.com/package/redis) as a dependency. Server now warns developers of new errors via email
+- `utils` folder which contains utility functions
+- `scanner` and `reportErrors` functions which warns the developers of an occuring error. Scans every 15 minutes
+- `redis.ts` to create a redis client which holds the last known number of errors
 
 ### Changed
 
-- `routes` property in `createServer()` now uses an array of handlers.
-- `errorHandlers` are now abstracted into their own source file - `middlewares/errors.ts`.
-- Dummy data and `.post()` route added to `testEndpoint.handlers.ts`
-- `startServer` now returns a `http.Server` instance
+- `startServer` to periodically scan `error-logs.log` file

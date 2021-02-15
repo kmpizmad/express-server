@@ -1,6 +1,8 @@
 import express, { Application } from 'express';
 import { Server } from 'http';
 import { ServerConfiguration } from '../types';
+import { scanPeriod } from './constants';
+import { logScanner } from './utils/log-scanner/';
 import { logger } from './vendors';
 
 export { port } from './constants';
@@ -32,6 +34,8 @@ export const startServer = (
   server: Application,
   port: string | number
 ): Server => {
+  setInterval(logScanner, scanPeriod);
+
   return server.listen(port, () => {
     logger.info('Server is listening on port ' + port);
   });
