@@ -29,6 +29,6 @@
     "git": "git add . && git commit -m ",
     "test": "cross-env NODE_ENV=test && jest --detectOpenHandles",
     "build": "rm -rf build && tsc --project .",
-    "start": "cross-env NODE_ENV=development nodemon --exec ts-node index.ts"
+    "start": "yarn install && cross-env NODE_ENV=development nodemon --exec ts-node index.ts"
   }
 }
