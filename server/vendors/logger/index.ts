@@ -1,34 +1,35 @@
 import { join } from 'path';
-import { createLogger, format, Logger, transports } from 'winston';
+import { createLogger, format, Logger } from 'winston';
+import { Console, File } from 'winston/lib/winston/transports';
 import { today } from '../../constants';
 
 const logsFolder = (filename: string) => join('logs', today, filename + '.log');
 
-const logger: Logger = createLogger({
-  transports: [
-    new transports.File({
-      level: 'info',
-      filename: logsFolder('info-logs'),
-      format: format.combine(format.timestamp(), format.json()),
-    }),
-    new transports.File({
-      level: 'error',
-      filename: logsFolder('error-logs'),
-      format: format.combine(format.timestamp(), format.json()),
-    }),
-  ],
-});
-
-const consoleTransport =
+const transports =
   process.env.NODE_ENV === 'development'
-    ? new transports.Console({
-        level: 'debug',
-        format: format.combine(format.colorize(), format.simple()),
-      })
-    : null;
+    ? [
+        new Console({
+          level: 'debug',
+          format: format.combine(format.colorize(), format.simple()),
+        }),
+      ]
+    : process.env.NODE_ENV === 'production'
+    ? [
+        new File({
+          level: 'info',
+          filename: logsFolder('info-logs'),
+          format: format.combine(format.timestamp(), format.json()),
+        }),
+        new File({
+          level: 'error',
+          filename: logsFolder('error-logs'),
+          format: format.combine(format.timestamp(), format.json()),
+        }),
+      ]
+    : [];
 
-if (!!consoleTransport) {
-  logger.add(consoleTransport);
-}
+const logger: Logger = createLogger({
+  transports,
+});
 
 export default logger;
