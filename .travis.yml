@@ -2,9 +2,10 @@ sudo: false
 language: node_js
 node_js:
   - node
+service:
+  - redis-server
 scripts:
   - yarn lint
-  - redis-server
   - yarn test:coveralls
 nofications:
   - email: false
