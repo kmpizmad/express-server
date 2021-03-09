@@ -4,6 +4,7 @@ node_js:
   - node
 scripts:
   - yarn lint
+  - redis-server
   - yarn test:coveralls
 nofications:
   - email: false
