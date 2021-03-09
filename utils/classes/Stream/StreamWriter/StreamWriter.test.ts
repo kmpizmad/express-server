@@ -1,11 +1,12 @@
-import { WriteStream, rmSync } from 'fs';
+import { WriteStream } from 'fs';
+import { execSync } from 'child_process';
 import { join } from 'path';
 import { FileNotFoundException } from '../../../../exceptions';
 import { StreamReader } from '../StreamReader';
 import { StreamWriter } from './StreamWriter';
 
 describe('StreamWriter', () => {
-  const path = join(process.cwd(), 'streamWriter.txt');
+  const path = join(process.cwd(), 'dummy.txt');
   const streamWriter: StreamWriter = new StreamWriter(path);
   const streamReader: StreamReader = new StreamReader(path);
 
@@ -17,7 +18,7 @@ describe('StreamWriter', () => {
     streamWriter.close();
     streamReader.close();
   });
-  afterAll(() => rmSync(path));
+  afterAll(() => execSync(`rm -rf ${path}`));
 
   it('validates \'path\' param', () => {
     expect(() => new StreamWriter('src')).toThrowError(FileNotFoundException);
