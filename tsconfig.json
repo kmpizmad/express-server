@@ -10,8 +10,8 @@
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
-    // "noUnusedLocals": true,
-    // "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "outDir": "build",
     "removeComments": true,
     "resolveJsonModule": true,
@@ -20,7 +20,8 @@
     "strict": true,
     "strictPropertyInitialization": false,
     "target": "es5",
-    "typeRoots": ["types", "node_modules/@types"]
+    "typeRoots": ["node_modules/@types"]
   },
-  "exclude": ["node_modules", "build", "logs"]
+  "include": ["src", "utils", "vendors"],
+  "exclude": ["node_modules", "build", "**/__mocks__", "**/*.test.ts"]
 }

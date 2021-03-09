@@ -1,1 +1,0 @@
-export { nodeEnvIs } from './environment';

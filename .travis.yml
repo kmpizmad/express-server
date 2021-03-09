@@ -1,0 +1,9 @@
+sudo: false
+language: node_js
+node_js:
+  - node
+scripts:
+  - yarn lint
+  - yarn test:coveralls
+nofications:
+  - email: false

@@ -1,37 +1,20 @@
-# Express Server with TypeScript
+[![Build Status][travis-badge]][travis-url]
+[![Coverage Status][coveralls-badge]][coveralls-url]
 
-Basic setup for an Express application.
+# Table of Contents
 
-Type `yarn start` in the CLI to install `node_modules` and start the server
+- [Project Name](#project-name)
+- [License](#license)
 
-See changes [here](https://github.com/kmpizmad/express-server/blob/main/CHANGELOG.md)
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
-### Dependencies (vendors)
+# Project Name
 
-`express:` Server framework.
+See changes [here](https://github.com/kmpizmad/project-name/blob/main/CHANGELOG.md).
 
-`dotenv:` For importing environment variables which is used 99.99% of the time
+# License
 
-`winston:` Logging HTTP requests
-
-`nodemailer:` Sends email to developer(s) when an error occurs in today's `error-logs.log`
-
-`redis:` For caching the number of last known errors
-
-### Folder structure
-
-```
-project root
-└ logs
-└ server
-    └ middlewares
-    └ routes
-    └ utils
-    └ vendors
-└ types
-```
-
-### MIT License
+MIT License
 
 Copyright (c) 2021 Viktor Nagy
 
@@ -52,3 +35,8 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+[travis-badge]: https://travis-ci.com/kmpizmad/project-name.svg
+[travis-url]: https://travis-ci.com/kmpizmad/project-name
+[coveralls-badge]: https://coveralls.io/repos/github/kmpizmad/project-name/badge.svg
+[coveralls-url]: https://coveralls.io/github/kmpizmad/project-name?branch=main
